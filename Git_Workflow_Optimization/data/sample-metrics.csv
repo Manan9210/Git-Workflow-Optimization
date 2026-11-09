@@ -1,0 +1,4 @@
+workflow,merge_conflicts,integration_time_minutes,commits_per_day,collaboration_score,deployment_failure_percent
+Git Flow,6,55,3,3.4,12
+GitHub Flow,3,25,6,4.4,6
+Trunk-Based Development,2,15,9,4.1,4

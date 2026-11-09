@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git Workflow Optimization Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="eyebrow">DEVOPS MINI PROJECT</div>
+    <h1>Git Workflow Optimization</h1>
+    <p>Compare Git Flow, GitHub Flow and Trunk-Based Development using practical workflow metrics.</p>
+    <div class="tags"><span>Git</span><span>GitHub</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+  </header>
+
+  <main>
+    <section class="intro card">
+      <div>
+        <h2>Project overview</h2>
+        <p>This dashboard presents a structured comparison of three common Git branching strategies. The included values are <strong>illustrative sample data</strong> for demonstrating the analysis. Replace them with measurements from your own practical trials before submitting results as experimental findings.</p>
+      </div>
+    </section>
+
+    <section class="metrics">
+      <article class="metric card"><span>Workflows compared</span><strong>3</strong></article>
+      <article class="metric card"><span>Metrics tracked</span><strong>5</strong></article>
+      <article class="metric card"><span>Recommended for small teams</span><strong>GitHub Flow</strong></article>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div><h2>Workflow comparison</h2><p>Illustrative values — lower is better except commit frequency.</p></div>
+        <button id="resetBtn" class="secondary">Restore sample data</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Workflow</th><th>Merge conflicts</th><th>Integration time (min)</th><th>Commits / day</th><th>Collaboration (1–5)</th><th>Deployment failures (%)</th></tr></thead>
+          <tbody id="comparisonBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Update trial measurements</h2>
+      <p>Enter values from your own trials. The comparison table and summary will update automatically.</p>
+      <form id="dataForm">
+        <div class="form-grid">
+          <label>Workflow
+            <select id="workflow">
+              <option>Git Flow</option><option>GitHub Flow</option><option>Trunk-Based Development</option>
+            </select>
+          </label>
+          <label>Merge conflicts <input id="conflicts" type="number" min="0" required value="3"></label>
+          <label>Integration time (minutes) <input id="time" type="number" min="0" step="0.1" required value="35"></label>
+          <label>Commits per day <input id="commits" type="number" min="0" step="0.1" required value="5"></label>
+          <label>Collaboration score (1–5) <input id="collaboration" type="number" min="1" max="5" step="0.1" required value="3.5"></label>
+          <label>Deployment failures (%) <input id="failures" type="number" min="0" max="100" step="0.1" required value="8"></label>
+        </div>
+        <button type="submit">Save measurements</button>
+      </form>
+      <p id="status" class="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <h2>Quick interpretation</h2>
+      <div id="summary" class="summary"></div>
+    </section>
+
+    <section class="card">
+      <h2>Workflow descriptions</h2>
+      <div class="workflow-grid">
+        <article><h3>Git Flow</h3><p>Uses long-lived branches such as main and develop, plus feature, release and hotfix branches. It provides structure but can add process overhead.</p></article>
+        <article><h3>GitHub Flow</h3><p>Uses a main branch and short-lived feature branches. Changes are reviewed through pull requests and merged after checks pass.</p></article>
+        <article><h3>Trunk-Based Development</h3><p>Developers integrate small changes frequently into a shared main branch, often using short-lived branches and automated tests.</p></article>
+      </div>
+    </section>
+
+    <footer>DevOps Mini Project • Git Workflow Optimization • Replace sample measurements with your own trial results.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
